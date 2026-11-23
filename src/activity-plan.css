@@ -1,0 +1,489 @@
+.activity-detail, .activity-plan {
+  width: min(calc(100% - 64px), 1160px);
+  min-height: 55vh;
+  margin: 0 auto;
+  padding: 40px 0 84px;
+  color: var(--ink, #203d3b);
+}
+
+.activity-detail button, .activity-plan button {
+  font: inherit;
+  cursor: pointer;
+}
+
+.activity-detail h1, .activity-plan h1,
+.activity-detail h2, .activity-plan h2 {
+  font-family: var(--heading-font, 'Sora', sans-serif);
+  color: var(--dark-teal, #173f3a);
+}
+
+.activity-detail h1, .activity-plan h1 {
+  margin: 0;
+  font-size: clamp(2.55rem, 4.7vw, 4.7rem);
+  font-weight: 600;
+  line-height: .99;
+  letter-spacing: -.048em;
+  text-wrap: balance;
+}
+
+.activity-detail h2, .activity-plan h2 {
+  margin: 0;
+  font-size: clamp(1.23rem, 2vw, 1.65rem);
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: -.025em;
+}
+
+.activity-back {
+  display: inline-flex;
+  align-items: center;
+  gap: .55rem;
+  margin-bottom: 1.35rem;
+  padding: .3rem 0;
+  border: 0;
+  background: transparent;
+  color: var(--dark-teal, #173f3a);
+}
+
+.activity-back:hover, .plan-row-title:hover {
+  text-decoration: underline;
+  text-underline-offset: .2em;
+}
+
+.activity-image {
+  display: grid;
+  min-width: 0;
+  min-height: 0;
+  overflow: hidden;
+  place-items: center;
+  background: #e2ece4;
+  color: #5d887c;
+}
+
+.activity-image img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.activity-detail-hero {
+  display: grid;
+  grid-template-columns: 1.04fr 1fr;
+  overflow: hidden;
+  border: 1px solid #e2e6dc;
+  border-radius: 24px;
+  background: #fffefa;
+}
+
+.activity-detail-image {
+  position: relative;
+  min-height: 365px;
+}
+
+.activity-detail-image img {
+  position: absolute;
+  inset: 0;
+}
+
+.activity-detail-intro {
+  display: grid;
+  align-content: center;
+  gap: 1.2rem;
+  padding: clamp(2rem, 4vw, 3.75rem);
+}
+
+.activity-detail-intro > p, .plan-hero > div > p {
+  margin: 0;
+  color: #5f706b;
+  font-size: 1.05rem;
+  line-height: 1.65;
+}
+
+.activity-detail-skills, .activity-detail-meta, .activity-actions, .plan-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .55rem;
+}
+
+.activity-detail-skills span {
+  border-radius: 999px;
+  padding: .35rem .65rem;
+  background: #e7ede5;
+  color: #345e54;
+  font-size: .75rem;
+  font-weight: 700;
+}
+
+.activity-detail-meta {
+  gap: .6rem 1rem;
+  color: #5c7068;
+  font-size: .84rem;
+}
+
+.activity-detail-meta span, .plan-row-content span {
+  display: inline-flex;
+  align-items: center;
+  gap: .35rem;
+}
+
+.activity-detail .activity-primary, .activity-detail .activity-secondary,
+.activity-plan .activity-primary, .activity-plan .activity-secondary {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: .5rem;
+  min-height: 44px;
+  padding: .65rem 1rem;
+  border: 1px solid transparent;
+  border-radius: 999px;
+  font-size: .89rem;
+  font-weight: 700;
+}
+
+.activity-detail .activity-primary, .activity-plan .activity-primary {
+  background: var(--dark-teal, #173f3a);
+  color: white;
+}
+
+.activity-detail .activity-primary:hover:not(:disabled), .activity-plan .activity-primary:hover {
+  background: #315c50;
+}
+
+.activity-detail .activity-primary:disabled {
+  background: #e7ede5;
+  color: #345e54;
+  cursor: default;
+}
+
+.activity-detail .activity-secondary, .activity-plan .activity-secondary {
+  border-color: #d6dfd5;
+  background: #fffefa;
+  color: var(--dark-teal, #173f3a);
+}
+
+.activity-detail .activity-secondary:hover, .activity-plan .activity-secondary:hover {
+  background: #eef2eb;
+}
+
+.activity-detail-sections {
+  display: grid;
+  grid-template-columns: minmax(0, 1.55fr) minmax(0, 1fr);
+  align-items: start;
+  gap: 1.3rem;
+  margin-top: 1.3rem;
+}
+
+.activity-detail-main, .activity-detail-aside {
+  display: grid;
+  gap: 1.3rem;
+}
+
+.activity-panel {
+  padding: clamp(1.25rem, 3vw, 2rem);
+  border: 1px solid #e1e6dc;
+  border-radius: 18px;
+  background: #fffefa;
+}
+
+.activity-panel h2 {
+  display: flex;
+  align-items: center;
+  gap: .65rem;
+}
+
+.activity-panel h2 svg {
+  flex: none;
+  color: #547b6f;
+}
+
+.activity-steps, .activity-materials {
+  margin: 1rem 0 0;
+  padding: 0;
+  line-height: 1.55;
+}
+
+.activity-steps {
+  display: grid;
+  gap: .9rem;
+  list-style: none;
+}
+
+.activity-steps li {
+  display: grid;
+  grid-template-columns: 1.95rem minmax(0, 1fr);
+  align-items: baseline;
+  gap: .65rem;
+}
+
+.activity-steps li span {
+  display: grid;
+  width: 1.85rem;
+  height: 1.85rem;
+  place-items: center;
+  border-radius: 50%;
+  background: #e7eee5;
+  color: #315d51;
+  font-size: .79rem;
+  font-weight: 700;
+}
+
+.activity-materials {
+  padding-left: 1.15rem;
+}
+
+.activity-materials li + li {
+  margin-top: .35rem;
+}
+
+.activity-panel p {
+  margin: .85rem 0 0;
+  line-height: 1.6;
+}
+
+.activity-tip {
+  background: #fbf0d9;
+  border-color: #efe1c4;
+}
+
+.activity-printable {
+  background: #e9efe7;
+  border-color: #dde7da;
+}
+
+.activity-printable button {
+  margin-top: .85rem;
+}
+
+.plan-hero {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  gap: 1.5rem;
+  padding: clamp(1.8rem, 4vw, 3.3rem);
+  border: 1px solid #dee8dd;
+  border-radius: 24px;
+  background: #e9efe7;
+}
+
+.plan-hero h1 {
+  margin-bottom: .75rem;
+}
+
+.plan-actions {
+  flex-shrink: 0;
+}
+
+.plan-week-control {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: .35rem;
+  margin: 1rem auto;
+  max-width: 21rem;
+  padding: .15rem .25rem;
+  border: 1px solid #dfe6db;
+  border-radius: 12px;
+  text-align: center;
+  background: #fffefa;
+}
+
+.plan-progress {
+  display: grid;
+  gap: .6rem;
+  margin: 1.4rem 0;
+  padding: 1rem 1.2rem;
+  border: 1px solid #dfe6db;
+  border-radius: 14px;
+  background: #fffefa;
+}
+
+.plan-progress > div {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: .35rem 1rem;
+  font-size: .93rem;
+}
+
+.plan-progress span {
+  color: #60726a;
+}
+
+.plan-progress progress {
+  width: 100%;
+  height: .5rem;
+  overflow: hidden;
+  border: 0;
+  border-radius: 999px;
+  appearance: none;
+  background: #dfe8dd;
+  color: #5b8e7d;
+}
+
+.plan-progress progress::-webkit-progress-bar {
+  background: #dfe8dd;
+}
+
+.plan-progress progress::-webkit-progress-value {
+  border-radius: 999px;
+  background: #5b8e7d;
+}
+
+.plan-progress progress::-moz-progress-bar {
+  border-radius: 999px;
+  background: #5b8e7d;
+}
+
+.plan-days {
+  display: grid;
+  gap: 1rem;
+}
+
+.plan-day {
+  overflow: hidden;
+  border: 1px solid #e3e7df;
+  border-radius: 16px;
+  background: #fffefa;
+}
+
+.plan-day h2 {
+  padding: .8rem 1.2rem;
+  border-bottom: 1px solid #e3e7df;
+}
+
+.plan-day ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.plan-row {
+  display: grid;
+  grid-template-columns: auto 67px minmax(0, 1fr) auto;
+  align-items: center;
+  gap: .85rem;
+  padding: .95rem 1.2rem;
+}
+
+.plan-row + .plan-row {
+  border-top: 1px solid #e3e7df;
+}
+
+.plan-row input {
+  width: 1.1rem;
+  height: 1.1rem;
+  margin: 0;
+  accent-color: #467869;
+  cursor: pointer;
+}
+
+.plan-thumbnail {
+  width: 67px;
+  height: 49px;
+  border-radius: 8px;
+}
+
+.plan-thumbnail > svg {
+  width: 28px;
+  height: 28px;
+}
+
+.plan-row-content {
+  display: grid;
+  justify-items: start;
+  gap: .25rem;
+}
+
+.plan-row-content span {
+  color: #617468;
+  font-size: .8rem;
+}
+
+.plan-row-done .plan-row-content :is(button, strong) {
+  color: #647871;
+  text-decoration: line-through;
+}
+
+.activity-plan .plan-row-title {
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: inherit;
+  text-align: left;
+  font-weight: 700;
+}
+
+.plan-remove {
+  display: grid;
+  width: 40px;
+  height: 40px;
+  place-items: center;
+  border: 0;
+  border-radius: 50%;
+  background: transparent;
+  color: #62736b;
+}
+
+.plan-remove:hover {
+  background: #f7eee8;
+  color: #9b4c40;
+}
+
+.plan-empty {
+  margin-top: 1.4rem;
+  border: 1px solid #e3e7df;
+  border-radius: 18px;
+  background: #fffefa;
+}
+
+.plan-empty {
+  display: grid;
+  justify-items: center;
+  gap: .85rem;
+  padding: clamp(1.75rem, 6vw, 4rem) 1.25rem;
+  color: #577b6e;
+  text-align: center;
+}
+
+.plan-empty p {
+  max-width: 29rem;
+  margin: 0 0 .4rem;
+  color: #62726b;
+}
+
+.plan-print-checkbox {
+  display: none;
+}
+
+@media (max-width: 850px) {
+  .activity-detail-hero, .activity-detail-sections { grid-template-columns: minmax(0, 1fr); }
+  .activity-detail-image { min-height: 0; aspect-ratio: 16 / 9; }
+  .plan-hero { align-items: start; flex-direction: column; }
+}
+
+@media (max-width: 540px) {
+  .activity-detail, .activity-plan { width: calc(100% - 32px); padding: 24px 0 56px; }
+  .activity-detail-intro { padding: 1.25rem; }
+  .plan-row { grid-template-columns: auto 49px minmax(0, 1fr) auto; gap: .55rem; padding: .75rem; }
+  .plan-thumbnail { width: 49px; height: 42px; }
+  .plan-remove { width: 34px; height: 34px; }
+}
+
+@media print {
+  @page { margin: 14mm; }
+  body:has(.activity-plan) { margin: 0; color: black; background: white; }
+  body:has(.activity-plan) #root > :not(:has(.activity-plan)):not(.activity-plan),
+  body:has(.activity-plan) :is(header, footer, nav):not(.plan-hero):not(:has(.activity-plan)),
+  .activity-plan :is(.plan-actions, .plan-progress, .plan-week-control button, .plan-thumbnail, .plan-remove, input, .plan-empty button) {
+    display: none !important;
+  }
+  .activity-plan, .activity-plan .plan-hero { width: 100%; margin: 0; padding: 0; }
+  .activity-plan .plan-hero { display: block; margin-bottom: 1rem; border: 0; background: transparent; }
+  .activity-plan .plan-hero h1 { font-size: 2rem; }
+  .plan-week-control { margin: 0 0 1rem; padding: 0; border: 0; }
+  .activity-plan .plan-day { break-inside: avoid; }
+  .activity-plan .plan-row { grid-template-columns: 1rem minmax(0, 1fr); break-inside: avoid; }
+  .activity-plan .plan-print-checkbox { display: block; }
+  .activity-plan :is(h1, h2, p, button, span, strong) { color: black !important; }
+}

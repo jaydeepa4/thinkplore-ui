@@ -1,0 +1,83 @@
+.auth-dialog {
+  width: min(450px, calc(100% - 32px));
+  max-width: none;
+  max-height: calc(100% - 32px);
+  padding: 0;
+  border: 1px solid var(--line);
+  border-radius: 26px;
+  background: var(--paper);
+  color: var(--ink);
+  box-shadow: 0 24px 75px #263b403b;
+}
+
+.auth-dialog::backdrop { background: #263b4077; }
+
+.auth-dialog-content {
+  position: relative;
+  padding: clamp(22px, 5vw, 34px);
+}
+
+.auth-dialog-close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  color: var(--muted);
+}
+
+.auth-dialog-mark {
+  display: grid;
+  place-items: center;
+  width: 45px;
+  height: 45px;
+  border-radius: 15px;
+  margin-bottom: 15px;
+  background: #d9efea;
+  color: var(--dark-teal);
+  transform: rotate(-8deg);
+}
+
+.auth-dialog h2 { font-size: clamp(1.5rem, 4.4vw, 1.95rem); }
+.auth-dialog-intro { margin-top: 8px; }
+.auth-dialog-form { display: grid; gap: 13px; margin-top: 22px; }
+.auth-dialog-field { display: grid; gap: 5px; }
+.auth-dialog-field label { font-size: .92rem; font-weight: 700; }
+
+.auth-dialog-field input {
+  width: 100%;
+  min-height: 44px;
+  padding: 9px 11px;
+  background: #fff;
+  border: 1px solid #bfcac2;
+  border-radius: 9px;
+  color: var(--ink);
+}
+
+.auth-dialog-field input:focus-visible { outline-offset: 1px; }
+.auth-dialog-field input[aria-invalid="true"] { border-color: #ac4f3b; }
+.auth-dialog-hint, .auth-dialog-error { font-size: .86rem; line-height: 1.45; }
+.auth-dialog-error { color: #983827; }
+
+.auth-dialog-form-error {
+  background: #fbedeb;
+  padding: 10px 12px;
+  border: 1px solid #e9c9c2;
+  border-radius: 9px;
+}
+
+.auth-dialog-submit { width: 100%; margin-top: 3px; }
+.auth-dialog button:disabled { cursor: wait; }
+.auth-dialog-submit:disabled { opacity: .82; }
+.auth-dialog-switch { margin-top: 14px; text-align: center; font-size: .94rem; }
+.auth-dialog-switch button { padding: 6px 2px; }
+.auth-dialog-spinner { animation: auth-dialog-spin .85s linear infinite; }
+
+@keyframes auth-dialog-spin { to { transform: rotate(360deg); } }
+
+@media (max-width: 480px) {
+  .auth-dialog { border-radius: 20px; }
+  .auth-dialog-form { gap: 11px; margin-top: 18px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .auth-dialog-spinner { animation: none; }
+}
